@@ -4,3 +4,13 @@ body{
 .nav-link{
     color: white;
 }
+.card{
+    background-color: blanchedalmond;
+    border: none;
+}
+.card-image{
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 300px;
+}
