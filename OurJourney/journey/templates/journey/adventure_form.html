@@ -1,0 +1,23 @@
+{% extends 'journey/base.html' %}
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-header bg-info ">
+          <div class="card-title form-title">
+            Add Adventure
+          </div>
+        </div>
+        <div class="card-body">
+          <form class="row gy-2 gx-3 align-items-center" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn-info" type="submit">Add Item</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
