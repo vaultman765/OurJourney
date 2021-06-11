@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 # Create your models here.
@@ -38,4 +39,7 @@ class Adventures(models.Model):
 
     def __str__(self):
         return self.adventure
+
+    def get_absolute_url(self):
+        return reverse("journey:detail", kwargs={"pk": self.pk})
 
