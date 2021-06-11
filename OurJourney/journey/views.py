@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator
 from .models import Adventures
 
@@ -17,7 +18,11 @@ class AdventureList(ListView):
     template_name = 'journey/search_adventures.html'
     context_object_name = 'adventure_list'
     paginate_by = 12
-    paginate_orphans = 4
+
+
+class AdventureDetail(DetailView):
+    model = Adventures
+    template_name = 'journey/detail.html'
 
 
 def add_adventure(request):
@@ -26,4 +31,3 @@ def add_adventure(request):
 
     }
     return render(request, 'journey/add_adventure.html', context)
-
