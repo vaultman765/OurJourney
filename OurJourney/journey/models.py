@@ -41,5 +41,5 @@ class Adventures(models.Model):
         return self.adventure
 
     def get_absolute_url(self):
-        return reverse("journey:detail", kwargs={"pk": self.pk})
+        return reverse("journey:detail", kwargs={"id": self.id})
 
