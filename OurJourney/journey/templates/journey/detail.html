@@ -1,0 +1,77 @@
+<!doctype html>
+{% extends 'journey/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="detail_img" src="{{ adv.image.url }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                    <input type="hidden" id="items" name="items">
+                <div class="form row">
+                    <input type="text" readonly class="form-control-plaintext detail_header" id="adventure" name="adventure" value="{{ adv.adventure }}">
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="category" class="col-sm-2 col-form-label">Category:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control-plaintext" id="category" value="{{ adv.category }}/{{ adv.subcategory }}">
+                        </div>
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="location" class="col-sm-2 col-form-label">Location:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext" id="location" value="{{ adv.location }}">
+                    </div>
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="hours" class="col-sm-2 col-form-label">Hours: </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext" id="hours" name="hours" value="{{ adv.hours }}">
+                    </div>
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="hours" class="col-sm-2 col-form-label">Info: </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext" id="website" value="{{ adv.website }}">
+                    </div>
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="hours" class="col-sm-2 col-form-label">Info: </label>
+                    <div class="col-sm-8">
+                        <textarea readonly rows="3" class="form-control" name="details" id="details">{{ adv.details }}</textarea>
+                    </div>
+                </div>
+                <div class="form-row mb-3 row">
+                    <label for="sdate">Start Date/Time:</label>
+                    <div class="col-sm-8">
+                        <input type="date" id="sdate" name="sdate">
+                    </div>
+                    <label for="stime" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="stime" name="stime">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add to Calendar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
