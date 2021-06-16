@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'OurJourney.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
+if os.environ.get('LOGNAME') == 'ubuntu':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
