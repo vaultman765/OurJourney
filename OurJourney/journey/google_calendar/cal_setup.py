@@ -1,4 +1,5 @@
 import pickle
+import os
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -7,7 +8,7 @@ from google.auth.transport.requests import Request
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-CREDENTIALS_FILE = b'C:\Users\kylej\OneDrive\Documents\Websites\OurJourney\OurJourney\journey\google_calendar\credentials.json'
+CREDENTIALS_FILE = os.getcwd() + '/journey/google_calendar/credentials.json'
 
 
 def get_calendar_service():
