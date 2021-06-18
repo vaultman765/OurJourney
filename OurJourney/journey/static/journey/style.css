@@ -35,3 +35,11 @@ body{
     text-align: center;
     width: 100%;
 }
+.jumbotron{
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 35vh;
+
+}
