@@ -11,7 +11,7 @@ def home(request):
 
     context = {
     }
-    return render(request, 'journey/base.html', context)
+    return render(request, 'journey/home.html', context)
 
 
 class AdventureList(ListView):
