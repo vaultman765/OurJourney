@@ -10,49 +10,59 @@
 </head>
 <body>
 {% block body %}
-<div class="container-fluid">
+<div class="container">
     <div class="row no-gutters">
         <div class="col">
-            <div
-                    class="jumbotron jumbotron-image p-5 text-end d-flex justify-content-end align-items-end  no-padding"
-                    style="
-                  background-image: url('https://www.robin-noorda.com/uploads/1/6/8/3/16830688/3347022_orig.jpg');
-                "
-            >
-                    <div class="d-flex justify-content-end align-items-end">
-                        <div class="text-white">
-                            <h1 class="mb-3">Lauren & Kyle</h1>
-                            <h4 class="mb-3">09.19.2020</h4>
-                        </div>
+            <div class="jumbotron p-5 text-end bg-image rounded-3">
+                <div class="d-flex justify-content-end align-items-end h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">Lauren & Kyle</h1>
+                        <h4 class="mb-4">09.19.2020</h4>
                     </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-            <div class="row blankspace"></div>
-            <div class="row">
-                <div class="underline aboutus">About Us</div>
-                <h6 class="story">Just two kids who fell in love and want to explore the
-                    world together. Being in a long distance relationship has
-                given us a wide range of places to explore. We want to
-                document our journey together so we can look back on
-                our adventures and hold those memories forever</h6>
-            </div>
-            <div class="row"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="container">
-                <div class="row blankspace"></div>
+        <div class="row ourstory">
+
+            <div class="col-md-6">
+                <div class="blankspace150"></div>
                 <div class="row">
-                    <div class="column"
+                    <div class="underline aboutus">About Us</div>
+                    <h6 class="story">Just two kids who fell in love and want to explore the
+                        world together. Being in a long distance relationship has
+                        given us a wide range of places to explore. We want to
+                        document our journey together so we can look back on
+                        our adventures and hold those memories forever</h6>
+                </div>
+            </div>
+
+            <div class="col-md-6 ourpics">
+                <div class="blankspace15"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="fit-image rounded-1" src="{{ '../../static/journey/hotairballoon.jpg' }}">
+                        </div>
+                        <div class="col-md-6">
+                            <img class="fit-image rounded-1" src="{{ '../../static/journey/hands.jpg' }}">
+                        </div>
+                    </div>
+                    <div class="blankspace15"></div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center text-center">
+                            <img class="fit-image-wide rounded-1" src="{{ '../../static/journey/mountainNC.png' }}">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="blankspace150"></div>
+
 {% endblock %}
 </body>
 </html>
