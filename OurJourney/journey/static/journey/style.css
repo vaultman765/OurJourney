@@ -36,11 +36,14 @@ body{
     width: 100%;
 }
 .jumbotron{
-    background-position: center center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    display: flex;
-    height: 35vh;
+    background-position: center;
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
+    /*display: flex;*/
+    /*object-fit: cover;*/
+    /*width: 1366px;*/
+    height: 493px;
+    background-image: url('../../static/journey/mountainMD.jpg');
 }
 .no-padding{
     padding-right: 0px;
@@ -48,7 +51,7 @@ body{
 }
 .underline {
     text-decoration: underline;
-    text-decoration-color: red;
+    text-decoration-color: rgba(255, 0, 0, 0.4);
     text-decoration-thickness: 1px;
     text-underline-offset: .2em;
 }
@@ -60,6 +63,30 @@ body{
 .story{
     line-height: 18pt;
 }
-.blankspace {
-    height: 150px;
+.blankspace150{
+    height: 100px;
+}
+.blankspace15{
+    height: 15px;
+}
+.ourstory{
+    padding-left: 50px;
+    padding-right: 40px
+}
+.ourpics{
+    padding-right: 30px;
+    padding-left: 10px;
+}
+.ourstorypics{
+    max-height: 50pc;
+}
+.fit-image{
+    height: 200px;
+    width: 252px;
+    object-fit: cover;
+}
+.fit-image-wide{
+    height: 200px;
+    width: 528px;
+    object-fit: cover;
 }
