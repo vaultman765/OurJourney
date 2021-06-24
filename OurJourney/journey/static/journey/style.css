@@ -51,17 +51,22 @@ body{
 }
 .underline {
     text-decoration: underline;
-    text-decoration-color: rgba(255, 0, 0, 0.4);
-    text-decoration-thickness: 1px;
+    text-decoration-color: #CF755A;
+    text-decoration-thickness: 2px;
     text-underline-offset: .2em;
 }
 .aboutus{
-    font-size: xx-large;
-    font-weight: 500;
-    padding-bottom: 10px;
+    font-size: 51pt;
+    font-weight: bold;
+    padding-bottom: 16px;
+    line-height: 63pt;
+    font-family: 'Raleway';
 }
 .story{
+    font-family: 'Source Serif Pro';
     line-height: 18pt;
+    line-height: 26pt;
+    max-width:  592px;
 }
 .blankspace150{
     height: 100px;
@@ -70,8 +75,8 @@ body{
     height: 15px;
 }
 .ourstory{
-    padding-left: 50px;
-    padding-right: 40px
+    padding-left: 132px;
+    padding-right: 66px;
 }
 .ourpics{
     padding-right: 30px;
@@ -89,4 +94,10 @@ body{
     height: 200px;
     width: 528px;
     object-fit: cover;
+}
+.storybox{
+    padding-top: 91px;
+}
+.picturebox{
+    padding-top: 66px;
 }
