@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView
 from .models import Adventures
 from datetime import datetime, timedelta
 from .google_calendar.cal_setup import get_calendar_service
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -69,5 +70,9 @@ def detail(request, id):
                                 }).execute()
 
     return render(request, 'journey/detail.html', {'adv': adv})
+
+
+def home_redirect(request):
+    return redirect('/journey/')
 
 
