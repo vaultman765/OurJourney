@@ -1,16 +1,37 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
-from .models import Adventures
+from .models import Adventures, TakenAdventures
 from datetime import datetime, timedelta
 from .google_calendar.cal_setup import get_calendar_service
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
 
 # Create your views here.
 def home(request):
+    image_objects = TakenAdventures.objects.all()
+
+    paginator = Paginator(image_objects, 1)
+    page = request.GET.get('page')
+    active_image = paginator.get_page(page)
+
+    if active_image.has_next():
+        next_page = active_image.next_page_number()
+        next_image = paginator.get_page(next_page)
+    else: 
+        next_image = paginator.get_page(1)
+
+    if active_image.has_previous():
+        prev_page = active_image.previous_page_number()
+        prev_image = paginator.get_page(prev_page)
+    else: 
+        prev_image = paginator.get_page(paginator.num_pages)
 
     context = {
+        'prev_image': prev_image,
+        'active_image': active_image,
+        'next_image': next_image
     }
     return render(request, 'journey/home.html', context)
 
