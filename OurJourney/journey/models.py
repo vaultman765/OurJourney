@@ -43,3 +43,10 @@ class Adventures(models.Model):
     def get_absolute_url(self):
         return reverse("journey:detail", kwargs={"id": self.id})
 
+
+class TakenAdventures(models.Model):
+    image = models.ImageField(upload_to='adventures/taken/images/', default='')
+    caption = models.TextField(default="")
+    location = models.CharField(default="", max_length=200)
+    date = models.CharField(default="", max_length=200)
+
