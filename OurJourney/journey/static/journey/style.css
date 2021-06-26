@@ -1,9 +1,3 @@
-body{
-    background-color: blanchedalmond;
-}
-.nav-link{
-    color: white;
-}
 .card{
     background-color: blanchedalmond;
     border: none;
@@ -57,47 +51,96 @@ body{
 }
 .aboutus{
     font-size: 51pt;
-    font-weight: bold;
     padding-bottom: 16px;
     line-height: 63pt;
-    font-family: 'Raleway';
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 .story{
-    font-family: 'Source Serif Pro';
-    line-height: 18pt;
     line-height: 26pt;
     max-width:  592px;
-}
-.blankspace150{
-    height: 100px;
-}
-.blankspace15{
-    height: 15px;
+    font-family: source-serif-pro, serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .ourstory{
     padding-left: 132px;
-    padding-right: 66px;
-}
-.ourpics{
-    padding-right: 30px;
-    padding-left: 10px;
-}
-.ourstorypics{
-    max-height: 50pc;
-}
-.fit-image{
-    height: 200px;
-    width: 252px;
-    object-fit: cover;
-}
-.fit-image-wide{
-    height: 200px;
-    width: 528px;
-    object-fit: cover;
+    /*padding-right: 66px;*/
 }
 .storybox{
     padding-top: 91px;
 }
-.picturebox{
-    padding-top: 66px;
+.active-img{
+    height: 283px;
+    width: 355px;
+    object-fit: cover;
+}
+.inactive-img{
+    opacity: 40%;
+    height: 205px;
+    width: 259px;
+    object-fit: cover;
+}
+.thumb1{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.thumb2{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thumb3{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.arrows{
+    border: transparent;
+}
+.lk{
+    font-size: 56pt;
+    /*padding-bottom: 16px;*/
+    line-height: 63pt;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.lk-date{
+    font-size: 45pt;
+    /*padding-bottom: 16px;*/
+    line-height: 53pt;
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.ourpics{
+    padding-left: 100px;
+}
+.padr125{
+    max-width: 1920px;
+    margin-left: 200px;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #AEC1BA;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    max-width: 1920px;
+    margin: auto;
+    padding-left: 132px;
 }
