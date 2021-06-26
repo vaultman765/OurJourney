@@ -2,22 +2,24 @@
 {% extends 'journey/base.html' %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
+
 </head>
 <body>
+
+
 {% block body %}
 <!--Jumbotron-->
 <div class="row no-gutters">
     <div class="col">
         <div class="jumbotron p-5 text-end bg-image">
-            <div class="d-flex justify-content-end align-items-end h-100">
-                <div class="text-white">
-                    <h1 class="mb-3">Lauren & Kyle</h1>
-                    <h4 class="mb-4">09.19.2020</h4>
+            <div class="d-flex justify-content-end align-items-end h-100 padr125">
+                <div class="row">
+                    <div class="text-white">
+                        <div class="mb-3 lk">Lauren & Kyle</div>
+                        <div class="mb-4 lk-date">09.19.2020</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,30 +27,57 @@
 </div>
 <!--End Jumbotron-->
 
-<div class="container-fluid .no-padding">
+<div class="container no-padding" style="max-width: 1920px;">
     <div class="row ourstory">
         <!--About us story-->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="row storybox">
                 <div class="underline aboutus">About Us</div>
-                <h6 class="story">Just two kids who fell in love and want to explore the world together. Being in a long distance relationship has given us a wide range of places to explore. We want to document our journey together so we can look back on our adventures and hold these memories forever. And maybe even inspire new ideas for your next date night! </h6>
+                <p class="story">Just two kids who fell in love and want to explore the world together. Being in a long distance relationship has given us a wide range of places to explore. We want to document our journey together so we can look back on our adventures and hold these memories forever. And maybe even inspire new ideas for your next date night! </p>
             </div>
         </div>
 
-        <div class="col-md-6 ourpics">
-            <div class="container">
-                <div class="row picturebox">
-                    <div class="col-md-6">
-                        <img class="fit-image rounded-1" src="{{ '../../static/journey/hotairballoon.jpg' }}">
-                    </div>
-                    <div class="col-md-6">
-                        <img class="fit-image rounded-1" src="{{ '../../static/journey/hands.jpg' }}">
-                    </div>
-                </div>
-                <div class="blankspace15"></div>
+        <div class="col-md-7 ourpics">
+            <div class="container" style="padding-top: 63px;">
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center text-center">
-                        <img class="fit-image-wide rounded-1" src="{{ '../../static/journey/mountainNC.png' }}">
+                    <div class="col-lg-4 col-md-4 col-xs-6 thumb1">
+                        {% if active_image.has_previous %}
+                            <a class="page-link arrows" href="?page={{ active_image.previous_page_number }}">
+                                <img src="../../static/journey/previous.jpg">
+                            </a>
+                        {% else %}
+                            <a class="page-link arrows" href="?page={{ active_image.paginator.num_pages }}">
+                                <img src="../../static/journey/previous.jpg">
+                            </a>
+                        {% endif %}
+                        {% for prev_pic in prev_image %}
+                        <a href="{{ prev_pic.image.url }}">
+                            <img  src="{{ prev_pic.image.url }}" class="img-fluid inactive-img"  alt="">
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-6 thumb2" style="text-align: center;">
+                        {% for active_pic in active_image %}
+                        <a href="{{ active_pic.image.url }}">
+                            <img  src="{{ active_pic.image.url }}" class="img-fluid active-img"  alt="">
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-6 thumb3">
+                        {% for next_pic in next_image %}
+                        <a href="{{ next_pic.image.url }}">
+                            <img  src="{{ next_pic.image.url }}" class="img-fluid inactive-img"  alt="">
+                        </a>
+                        {% endfor %}
+                        {% if active_image.has_next %}
+                            <a class="page-link arrows" href="?page={{ active_image.next_page_number }}">
+                                <img src="../../static/journey/next.jpg">
+                            </a>
+                        {% else %}
+                            <a class="page-link arrows" href="?page=1">
+                                <img src="../../static/journey/next.jpg">
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -56,8 +85,11 @@
     </div>
 </div>
 
-<div class="blankspace150"></div>
+<div class="footer">
+    <div class="footer-text">Created with love by Lauren and Kyle</div>
+</div>
 
 {% endblock %}
 </body>
+
 </html>
