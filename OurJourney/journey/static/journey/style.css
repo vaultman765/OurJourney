@@ -144,3 +144,47 @@
     margin: auto;
     padding-left: 132px;
 }
+.loginout{
+    background-image: url(loginout.jpg);
+    border: none;
+    width: 144px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 18pt;
+    line-height: 21pt;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #FCFCFC;
+}
+.nav-link{
+    font-family: raleway, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 22pt;
+    font-size: 18pt;
+
+}
+.nav-item{
+     margin-right:35px;
+ }
+.adv-dd-item{
+    font-family: raleway, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 22pt;
+    font-size: 18pt;
+}
+.dropdown-menu{
+    background-color: #CF755A;
+    border-radius: 20px 20px 20px 20px;
+}
+.dropdown-item{
+    color: #FFFFFF;
+}
+.dropdown-divider{
+    color: #FFFFFF;
+    height: 10px;
+}
