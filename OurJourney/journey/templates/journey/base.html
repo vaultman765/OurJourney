@@ -29,12 +29,13 @@
             <li><a class="dropdown-item adv-dd-item" href="{% url 'journey:search_adventures' %}">Search Adventures</a></li>
             <li><hr class="dropdown-divider" style="color: white; height: 5px;"></li>
             <li><a class="dropdown-item adv-dd-item" href="{% url 'journey:add_adventure' %}">Add Adventure</a></li>
+            <li><hr class="dropdown-divider" style="color: white; height: 5px;"></li>
             <li><a class="dropdown-item adv-dd-item" href="{% url 'journey:adventures_taken' %}">View Adventures</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'journey:calendar' %}">Calendar</a></li>
         <li class="nav-item">
-            <a class="btn loginout" href="{% url 'journey:home' %}" id="Logout" role="button">
+            <a class="btn loginout" href="{% url 'logout' %}" id="Logout" role="button">
               Logout
             </a>
         </li>
