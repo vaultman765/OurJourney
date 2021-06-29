@@ -32,20 +32,8 @@ def home(request):
     else: 
         prev_image = paginator.get_page(paginator.num_pages)
 
-    # Top Login
-    if request.method == "POST":
-        user_form = AuthenticationForm(request, data=request.POST)
-
-        if user_form.is_valid():
-            username = user_form.cleaned_data.get("username")
-            password = user_form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-
-            if user is not None:
-                login(request, user)
-            else:
-                redirect('/journey/')
-    user_form = AuthenticationForm()
+    # Authentication
+    user_form = user_auth(request)
 
     context = {
         'prev_image': prev_image,
@@ -137,5 +125,22 @@ def home_redirect(request):
 def auth_check(request):
     if request.user.is_authenticated:
         return True
+
+
+def user_auth(request):
+    if request.method == "POST":
+        user_form = AuthenticationForm(request, data=request.POST)
+
+        if user_form.is_valid():
+            username = user_form.cleaned_data.get("username")
+            password = user_form.cleaned_data.get("password")
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+            else:
+                redirect('/journey/')
+    user_form = AuthenticationForm()
+    return user_form
 
 
