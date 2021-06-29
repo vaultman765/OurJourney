@@ -10,5 +10,6 @@ urlpatterns = [
     path('search_adventures/', views.AdventureList.as_view(), name='search_adventures'),
     path('add_adventure/', views.AddAdventure.as_view(), name='add_adventure'),
     path('<int:id>/', views.detail, name='detail'),
-    path('calendar/', views.calendar, name='calendar')
+    path('calendar/', views.calendar, name='calendar'),
+    path('adventures_taken', views.adventures_taken, name='adventures_taken')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
