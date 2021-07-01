@@ -6,6 +6,63 @@
     <title>Title</title>
 </head>
 <body>
+{% block body %}
+<!-- Banner -->
+<div class="jumbotron bg-light rounded-3" style="background-image: url('../../static/journey/balloonbanner.jpg')">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 88px; margin-left: 79px; padding: 0"><img src="../../static/journey/modalbutton.png"></div>
+            <div class="col no-padding" style="margin-top: 56px; margin-left: 25px;">
+                <div class="display-5 fw-bold">Kyle's 32nd Birthday</div>
+                <div class="col-md-8 fs-4">Bridge Water, VA | 04.18.2021</div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Banner Modal -->
+<div class="modal fade in banner-modal-placement" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog banner-modal" style="margin: 0">
+        <div class="modal-content">
+            <div class="container-fluid" style="padding: var(--bs-gutter-x,.75rem)">
+                <div class="row" style="display: flex; flex-wrap: nowrap;">
+                    <div class="col-auto">
+                        <div class="modal-title">Kyle's 32nd Birthday
+                            <a href="#" class="js-close-modal"></a>
+                        </div>
+                        <div class="modal-info">
+                            <img src="../../static/journey/location_icon.png" style="padding-bottom: 4.25px;padding-right: 16px;">
+                            Bridge Water, VA
+                        </div>
+                        <div class="modal-info">
+                            <img src="../../static/journey/date_icon.png" style="padding-bottom: 4.25px;padding-right: 16px;">
+                            April 18, 2021
+                        </div>
+                    </div>
+                    <div class="col-auto" style="width: 1000px; height: 100%;}">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
+                        <img class="img-fluid" src='../../static/journey/balloonbanner.jpg'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 adv-taken" align="center" style="padding-bottom: 16px">
+            Adventures Taken
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 d-flex align-items-center justify-content-center adv-taken" align="center">
+            <img src="../../static/journey/partial_underline.png">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
 </body>
 </html>
