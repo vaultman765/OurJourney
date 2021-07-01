@@ -77,6 +77,24 @@
     </div>
 </div>
 
+<div class="row">
+    {% for adventure in adv %}
+    <div class="col-md-3">
+        <div class="card">
+            <img style="height: 304px; width: 447px;" src="{{ adventure.image.url }}" class="card-img-top">
+            <div class="card-body">
+<!--                <div id="nm{{ product.id }}" class="card-title">{{ product.title }}</div>-->
+<!--                <div  id="price{{ product.id }}" class="card-text">{{ product.price }}</div>-->
+                <a href="/{{ product.id }}" class="btn btn-warning">View</a>
+                <button id="{{ product.id }}" class="btn atc btn-warning">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="footer">
+    <div class="footer-text">Created with love by Lauren and Kyle</div>
+</div>
 {% endblock %}
 </body>
 </html>

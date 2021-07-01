@@ -10,6 +10,9 @@
   <title>Document</title>
 </head>
 <body>
+<div class="footer">
+  <div class="footer-text">Created with love by Lauren and Kyle</div>
+</div>
 {% if user.is_authenticated %}
 <nav class="navbar navbar-expand-sm navbar-light bg-ligh">
   <div class="container-fluid no-padding">
@@ -79,9 +82,7 @@
 </nav>
 {% endif %}
 
-<div class="footer">
-  <div class="footer-text">Created with love by Lauren and Kyle</div>
-</div>
+
 
 {% if messages %}
 {% for message in messages %}
