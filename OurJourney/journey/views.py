@@ -104,7 +104,7 @@ def detail(request, id):
 
 
 def adventures_taken(request):
-    adv = Adventures.objects.all()
+    adv = TakenAdventures.objects.all()
 
     # Search
     adv_name = request.GET.get('adv_name')
