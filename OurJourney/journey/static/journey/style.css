@@ -37,13 +37,13 @@
     /*object-fit: cover;*/
     /*width: 1366px;*/
     height: 493px;
-    background-image: url('../../static/journey/mountainMD.jpg');
+    /*background-image: url('../../static/journey/mountainMD.jpg');*/
 }
 .no-padding{
     padding-right: 0px;
     padding-left: 0px;
 }
-.underline {
+.underline-home {
     text-decoration: underline;
     text-decoration-color: #CF755A;
     text-decoration-thickness: 2px;
@@ -193,4 +193,38 @@
     font-weight: 500;
     font-style: normal;
     font-size: 14pt;
+}
+.banner-modal{
+    max-width: fit-content;
+}
+.banner-modal-placement{
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    transform: translate(-50%, -50%);
+    width: 1500px;
+    height: auto;
+}
+.modal-title{
+    font-size: 34pt;
+    line-height: 45pt;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #CF755A;
+    padding-left: 0;
+}
+.modal-info{
+    line-height: 25pt;
+    font-family: source-serif-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18pt;
+}
+.adv-taken{
+    font-size: 50pt;
+    line-height: 45pt;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
