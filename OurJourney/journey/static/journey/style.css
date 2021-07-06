@@ -194,7 +194,9 @@
     max-width: fit-content;
 }
 .banner-modal-placement{
-    position: absolute;
+    position: fixed;
+    display: flex;
+    justify-content: center;
     left: 50%;
     top: 33%;
     transform: translate(-50%, -50%);
@@ -229,4 +231,60 @@ html,body {
     margin:0;
     padding:0;
     overflow:auto;
+}
+.adv-title{
+    font-family: raleway, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14pt;
+    line-height: 12pt;
+    color: #CF755A;
+}
+.adv-loc-dt{
+    font-family: source-serif-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12pt;
+    line-height: 14pt;
+    color: #737373;
+}
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.modal-dialog {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modal .modal-content {
+    padding: 0;
+    -webkit-animation-name: modal-animation;
+    -webkit-animation-duration: 0.5s;
+    animation-name: modal-animation;
+    animation-duration: 0.5s;
+}
+@-webkit-keyframes modal-animation {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes modal-animation {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
 }

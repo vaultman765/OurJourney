@@ -21,7 +21,7 @@
 </div>
 
 <!-- Banner Modal -->
-<div class="modal fade in banner-modal-placement" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade in banner-modal-placement" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: flex !important; justify-content: center !important;">
     <div class="modal-dialog banner-modal" style="margin: 0">
         <div class="modal-content">
             <div class="container-fluid" style="padding: var(--bs-gutter-x,.75rem)">
@@ -64,8 +64,8 @@
 
 <div class="row justify-content-center" style="padding-top: 43px;">
     <div class="col d-flex align-items-center justify-content-center" align="center">
-        <form class="card card-sm" style="border: none;">
-            <div class="card-body row no-gutters align-items-center">
+        <form class="card card-sm" style="border: none; min-width: 750px">
+            <div class="card-body row no-gutters align-items-center justify-content-center">
                 <div class="col" style="max-width: 368px;">
                     <input type="search" name="adv" placeholder="keywords, dates, location" class="form-control form-control-boarderless">
                 </div>
@@ -77,21 +77,53 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="padding-top: 40px; padding-left: 258px; padding-right: 258px; display: flex; justify-content: center;">
     {% for adventure in adv %}
-    <div class="col-md-3">
-        <div class="card">
-            <img style="height: 304px; width: 447px;" src="{{ adventure.image.url }}" class="card-img-top">
+    <div class="col-md-4" >
+        <div class="card text-center" style="border: transparent">
+            <img  src="{{ adventure.image.url }}" class="card-img-top" style="object-fit: cover; max-height: 304px;">
             <div class="card-body">
-<!--                <div id="nm{{ product.id }}" class="card-title">{{ product.title }}</div>-->
-<!--                <div  id="price{{ product.id }}" class="card-text">{{ product.price }}</div>-->
-                <a href="/{{ product.id }}" class="btn btn-warning">View</a>
-                <button id="{{ product.id }}" class="btn atc btn-warning">Add to cart</button>
+                <div id="nm{{ product.id }}" class="card-title adv-title">{{ adventure.caption }}</div>
+                <div  id="price{{ product.id }}" class="card-text adv-loc-dt">{{ adventure.location }} | {{ adventure.date }}</div>
+                <div class="col-sm-auto btn" type="button" data-bs-toggle="modal" data-bs-target="#pic{{ adventure.id }}" style="padding-top: 15px; padding-bottom: 50px;"><img src="../../static/journey/modalbutton.png"></div>
             </div>
         </div>
     </div>
+    <div class="modal fade in banner-modal-placement" id="pic{{ adventure.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog banner-modal" style="margin: 0">
+            <div class="modal-content">
+                <div class="container-fluid" style="padding: var(--bs-gutter-x,.75rem)">
+                    <div class="row" style="display: flex; flex-wrap: nowrap;">
+                        <div class="col-auto">
+                            <div class="modal-title">{{ adventure.caption }}
+                                <a href="#" class="js-close-modal"></a>
+                            </div>
+                            <div class="modal-info">
+                                <img src="../../static/journey/location_icon.png" style="padding-bottom: 4.25px;padding-right: 16px;">
+                                {{ adventure.location }}
+                            </div>
+                            <div class="modal-info">
+                                <img src="../../static/journey/date_icon.png" style="padding-bottom: 4.25px;padding-right: 16px;">
+                                {{ adventure.date }}
+                            </div>
+                        </div>
+                        <div class="col-auto" style="width: auto; height: 100%;}">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
+                            <img class="img-fluid" src='{{ adventure.image.url }}'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% endfor %}
 </div>
+
+
+
+
+
 <div class="footer">
     <div class="footer-text">Created with love by Lauren and Kyle</div>
 </div>
